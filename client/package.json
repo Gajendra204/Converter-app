@@ -12,11 +12,13 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
     "axios": "^1.9.0",
+    "firebase": "^11.9.1",
     "lucide-react": "^0.514.0",
     "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",
+    "react-router-dom": "^6.30.1",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useDropzone } from "react-dropzone";
-import FileConverter from './components/FileConverter'
+import { AuthProvider } from "./context/AuthContext";
+import AuthenticatedApp from "./components/AuthenticatedApp";
 
 function App() {
-  
   return (
-    <FileConverter/>
-    );
+    <AuthProvider>
+      <AuthenticatedApp />
+    </AuthProvider>
+  );
 }
 
 export default App;
