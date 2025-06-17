@@ -30,22 +30,6 @@ A full-stack application that enables users to convert various types of files in
 
 ## Project Structure
 
-```
-converter-app/
-├── client/              # Frontend React application
-│   ├── src/
-│   └── package.json
-└── server/              # Backend Express application
-    ├── routes/
-    │   ├── authRoutes.js
-    │   ├── documentRoutes.js
-    │   ├── videoRoutes.js
-    │   └── audioRoutes.js
-    ├── app.js
-    ├── server.js
-    └── package.json
-```
-
 ## Getting Started
 
 ### Prerequisites
