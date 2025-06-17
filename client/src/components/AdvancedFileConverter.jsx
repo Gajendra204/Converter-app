@@ -462,43 +462,43 @@ export default function AdvancedFileConverter() {
     if (conversionCategory === "document") {
       switch (conversionType) {
         case "pdf-to-docx":
-          endpoint = "convert";
+          endpoint = "api/convert";
           extension = "docx";
           break;
         case "pdf-to-pptx":
-          endpoint = "convert-pdf-to-pptx";
+          endpoint = "api/convert-pdf-to-pptx";
           extension = "pptx";
           break;
         case "pdf-to-xlsx":
-          endpoint = "convert-pdf-to-xlsx";
+          endpoint = "api/convert-pdf-to-xlsx";
           extension = "xlsx";
           break;
         case "pdf-to-txt":
-          endpoint = "convert-pdf-to-txt";
+          endpoint = "api/convert-pdf-to-txt";
           extension = "txt";
           break;
         case "pdf-to-rtf":
-          endpoint = "convert-pdf-to-rtf";
+          endpoint = "api/convert-pdf-to-rtf";
           extension = "rtf";
           break;
         case "docx-to-pdf":
-          endpoint = "convert-docx-to-pdf";
+          endpoint = "api/convert-docx-to-pdf";
           extension = "pdf";
           break;
         case "pptx-to-pdf":
-          endpoint = "convert-pptx-to-pdf";
+          endpoint = "api/convert-pptx-to-pdf";
           extension = "pdf";
           break;
         case "xlsx-to-pdf":
-          endpoint = "convert-xlsx-to-pdf";
+          endpoint = "api/convert-xlsx-to-pdf";
           extension = "pdf";
           break;
         case "txt-to-pdf":
-          endpoint = "convert-txt-to-pdf";
+          endpoint = "api/convert-txt-to-pdf";
           extension = "pdf";
           break;
         case "html-to-pdf":
-          endpoint = "convert-html-to-pdf";
+          endpoint = "api/convert-html-to-pdf";
           extension = "pdf";
           break;
       }
@@ -507,42 +507,42 @@ export default function AdvancedFileConverter() {
     else if (conversionCategory === "video") {
       switch (conversionType) {
         case "video-to-mp4":
-          endpoint = "convert-video";
+          endpoint = "api/convert-video";
           extension = "mp4";
           formData.append("targetFormat", "mp4");
           formData.append("quality", videoQuality);
           break;
         case "video-to-avi":
-          endpoint = "convert-video";
+          endpoint = "api/convert-video";
           extension = "avi";
           formData.append("targetFormat", "avi");
           formData.append("quality", videoQuality);
           break;
         case "video-to-mov":
-          endpoint = "convert-video";
+          endpoint = "api/convert-video";
           extension = "mov";
           formData.append("targetFormat", "mov");
           formData.append("quality", videoQuality);
           break;
         case "video-to-wmv":
-          endpoint = "convert-video";
+          endpoint = "api/convert-video";
           extension = "wmv";
           formData.append("targetFormat", "wmv");
           formData.append("quality", videoQuality);
           break;
         case "video-to-mkv":
-          endpoint = "convert-video";
+          endpoint = "api/convert-video";
           extension = "mkv";
           formData.append("targetFormat", "mkv");
           formData.append("quality", videoQuality);
           break;
         case "video-to-audio":
-          endpoint = "convert-video-to-audio";
+          endpoint = "api/convert-video-to-audio";
           extension = "mp3";
           formData.append("targetFormat", "mp3");
           break;
         case "compress-video":
-          endpoint = "compress-video";
+          endpoint = "api/compress-video";
           extension = "mp4";
           formData.append("compressionLevel", compressionLevel);
           break;
@@ -554,7 +554,7 @@ export default function AdvancedFileConverter() {
 
       switch (conversionType) {
         case "audio-to-mp3":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "mp3";
           formData.append("targetFormat", "mp3");
           formData.append("bitrate", actualSettings.bitrate);
@@ -562,21 +562,21 @@ export default function AdvancedFileConverter() {
           formData.append("channels", actualSettings.channels);
           break;
         case "audio-to-wav":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "wav";
           formData.append("targetFormat", "wav");
           formData.append("sampleRate", actualSettings.sampleRate);
           formData.append("channels", actualSettings.channels);
           break;
         case "audio-to-flac":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "flac";
           formData.append("targetFormat", "flac");
           formData.append("sampleRate", actualSettings.sampleRate);
           formData.append("channels", actualSettings.channels);
           break;
         case "audio-to-aac":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "aac";
           formData.append("targetFormat", "aac");
           formData.append("bitrate", actualSettings.bitrate);
@@ -584,7 +584,7 @@ export default function AdvancedFileConverter() {
           formData.append("channels", actualSettings.channels);
           break;
         case "audio-to-ogg":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "ogg";
           formData.append("targetFormat", "ogg");
           formData.append("bitrate", actualSettings.bitrate);
@@ -592,7 +592,7 @@ export default function AdvancedFileConverter() {
           formData.append("channels", actualSettings.channels);
           break;
         case "audio-to-m4a":
-          endpoint = "convert-audio";
+          endpoint = "api/convert-audio";
           extension = "m4a";
           formData.append("targetFormat", "m4a");
           formData.append("bitrate", actualSettings.bitrate);
@@ -600,20 +600,20 @@ export default function AdvancedFileConverter() {
           formData.append("channels", actualSettings.channels);
           break;
         case "enhance-audio":
-          endpoint = "enhance-audio";
+          endpoint = "api/enhance-audio";
           extension = "mp3";
           formData.append("enhancement", audioEnhancement);
           formData.append("volume", audioVolume);
           formData.append("normalize", audioNormalize.toString());
           break;
         case "trim-audio":
-          endpoint = "trim-audio";
+          endpoint = "api/trim-audio";
           extension = "mp3";
           formData.append("startTime", trimStartTime);
           formData.append("duration", trimDuration);
           break;
         case "merge-audio":
-          endpoint = "merge-audio";
+          endpoint = "api/merge-audio";
           extension = "mp3";
           break;
       }
