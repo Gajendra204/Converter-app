@@ -10,7 +10,10 @@ if (!fs.existsSync(outputDir)) {
 
 const convertVideo = async (inputPath, options) => {
   const { targetFormat, quality } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}.${targetFormat}`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}.${targetFormat}`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -37,9 +40,6 @@ const convertVideo = async (inputPath, options) => {
         case "mp4":
           command = command.videoCodec("libx264").audioCodec("aac");
           break;
-        case "avi":
-          command = command.videoCodec("libxvid").audioCodec("mp3");
-          break;
         case "mov":
           command = command.videoCodec("libx264").audioCodec("aac");
           break;
@@ -63,7 +63,10 @@ const convertVideo = async (inputPath, options) => {
 
 const extractAudioFromVideo = async (inputPath, options) => {
   const { targetFormat } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}.${targetFormat}`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}.${targetFormat}`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -82,7 +85,10 @@ const extractAudioFromVideo = async (inputPath, options) => {
 
 const compressVideo = async (inputPath, options) => {
   const { compressionLevel } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}_compressed.mp4`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}_compressed.mp4`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -115,7 +121,10 @@ const compressVideo = async (inputPath, options) => {
 
 const convertAudio = async (inputPath, options) => {
   const { targetFormat, bitrate, sampleRate, channels } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}.${targetFormat}`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}.${targetFormat}`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -172,7 +181,10 @@ const convertAudio = async (inputPath, options) => {
 
 const enhanceAudio = async (inputPath, options) => {
   const { enhancement, volume, normalize } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}_enhanced.mp3`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}_enhanced.mp3`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -212,7 +224,10 @@ const enhanceAudio = async (inputPath, options) => {
 
 const trimAudio = async (inputPath, options) => {
   const { startTime, duration } = options;
-  const outputFilename = `${path.basename(inputPath, path.extname(inputPath))}_trimmed.mp3`;
+  const outputFilename = `${path.basename(
+    inputPath,
+    path.extname(inputPath)
+  )}_trimmed.mp3`;
   const outputPath = path.join(outputDir, outputFilename);
 
   return new Promise((resolve, reject) => {
@@ -266,5 +281,5 @@ module.exports = {
   convertAudio,
   enhanceAudio,
   trimAudio,
-  mergeAudio
+  mergeAudio,
 };

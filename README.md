@@ -14,6 +14,7 @@ A full-stack application that enables users to convert various types of files in
 ## Tech Stack
 
 ### Frontend
+
 - React with Vite
 - TailwindCSS for styling
 - React Router for navigation
@@ -22,6 +23,7 @@ A full-stack application that enables users to convert various types of files in
 - Firebase Authentication
 
 ### Backend
+
 - Node.js & Express
 - Firebase Admin SDK
 - Adobe PDF Services
@@ -33,6 +35,7 @@ A full-stack application that enables users to convert various types of files in
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn
 - Firebase account
@@ -41,16 +44,19 @@ A full-stack application that enables users to convert various types of files in
 ### Backend Setup
 
 1. Navigate to the server directory:
+
 ```bash
 cd server
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the server:
+
 ```bash
 npm start
 ```
@@ -58,22 +64,26 @@ npm start
 ### Frontend Setup
 
 1. Navigate to the client directory:
+
 ```bash
 cd client
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the client directory:
+
 ```
 VITE_API_URL=http://localhost:5000
 VITE_FIREBASE_CONFIG=your_firebase_config
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```

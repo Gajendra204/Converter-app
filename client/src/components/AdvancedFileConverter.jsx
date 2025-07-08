@@ -129,7 +129,7 @@ export default function AdvancedFileConverter() {
     video: {
       name: "Video",
       icon: "🎥",
-      accept: ".mp4,.avi,.mov,.wmv,.mkv,.flv,.webm",
+      accept: ".mp4,.mov,.wmv,.mkv,.flv,.webm",
       options: [
         {
           value: "video-to-mp4",
@@ -137,15 +137,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "MP4",
           icon: "🎬",
-          fileTypes: ["avi", "mov", "wmv", "mkv", "flv", "webm"],
-        },
-        {
-          value: "video-to-avi",
-          label: "Convert to AVI",
-          from: "Video",
-          to: "AVI",
-          icon: "🎬",
-          fileTypes: ["mp4", "mov", "wmv", "mkv", "flv", "webm"],
+          fileTypes: ["mov", "wmv", "mkv", "flv", "webm"],
         },
         {
           value: "video-to-mov",
@@ -153,7 +145,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "MOV",
           icon: "🎬",
-          fileTypes: ["mp4", "avi", "wmv", "mkv", "flv", "webm"],
+          fileTypes: ["mp4", "wmv", "mkv", "flv", "webm"],
         },
         {
           value: "video-to-wmv",
@@ -161,7 +153,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "WMV",
           icon: "🎬",
-          fileTypes: ["mp4", "avi", "mov", "mkv", "flv", "webm"],
+          fileTypes: ["mp4", "mov", "mkv", "flv", "webm"],
         },
         {
           value: "video-to-mkv",
@@ -169,7 +161,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "MKV",
           icon: "🎬",
-          fileTypes: ["mp4", "avi", "mov", "wmv", "flv", "webm"],
+          fileTypes: ["mp4", "mov", "wmv", "flv", "webm"],
         },
         {
           value: "video-to-audio",
@@ -177,7 +169,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "MP3",
           icon: "🎵",
-          fileTypes: ["mp4", "avi", "mov", "wmv", "mkv", "flv", "webm"],
+          fileTypes: ["mp4", "mov", "wmv", "mkv", "flv", "webm"],
         },
         {
           value: "compress-video",
@@ -185,7 +177,7 @@ export default function AdvancedFileConverter() {
           from: "Video",
           to: "Compressed",
           icon: "📦",
-          fileTypes: ["mp4", "avi", "mov", "wmv", "mkv", "flv", "webm"],
+          fileTypes: ["mp4", "mov", "wmv", "mkv", "flv", "webm"],
         },
       ],
     },
@@ -512,12 +504,6 @@ export default function AdvancedFileConverter() {
           formData.append("targetFormat", "mp4");
           formData.append("quality", videoQuality);
           break;
-        case "video-to-avi":
-          endpoint = "api/convert-video";
-          extension = "avi";
-          formData.append("targetFormat", "avi");
-          formData.append("quality", videoQuality);
-          break;
         case "video-to-mov":
           endpoint = "api/convert-video";
           extension = "mov";
@@ -626,13 +612,14 @@ export default function AdvancedFileConverter() {
 
     setLoading(true);
     try {
-      const response = await fetch(
-        `https://api-icanconvert.onrender.com/${endpoint}`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      // const response = await fetch(`https://api-icanconvert.onrender.com/${endpoint}`, {
+      //   method: "POST",
+      //   body: formData,
+      // });
+      const response = await fetch(`http://localhost:5000/${endpoint}`, {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) throw new Error("Conversion failed");
 
